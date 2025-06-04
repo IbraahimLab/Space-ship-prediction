@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space Travel Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Space Travel Outcome</h1>
+        <form method="post">
+            <label>HomePlanet:</label>
+            <input type="text" name="HomePlanet" placeholder="Earth, Europa..." required>
+
+            <label>CryoSleep (True/False):</label>
+            <input type="text" name="CryoSleep" placeholder="True or False" required>
+
+            <label>Cabin:</label>
+            <input type="text" name="Cabin" placeholder="e.g., B/0/P" required>
+
+            <label>Destination:</label>
+            <input type="text" name="Destination" placeholder="e.g., TRAPPIST-1e" required>
+
+            <label>Age:</label>
+            <input type="number" step="any" name="Age" required>
+
+            <label>VIP (True/False):</label>
+            <input type="text" name="VIP" placeholder="True or False" required>
+
+            <label>RoomService:</label>
+            <input type="number" step="any" name="RoomService" required>
+
+            <label>FoodCourt:</label>
+            <input type="number" step="any" name="FoodCourt" required>
+
+            <label>ShoppingMall:</label>
+            <input type="number" step="any" name="ShoppingMall" required>
+
+            <label>Spa:</label>
+            <input type="number" step="any" name="Spa" required>
+
+            <label>VRDeck:</label>
+            <input type="number" step="any" name="VRDeck" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                <h2>Prediction:</h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
